@@ -1,0 +1,23 @@
+.order-form {
+  width: 90%;
+  margin: auto;
+}
+
+.order-form input,
+.order-text-area {
+  width: 90%;
+  height: 50px;
+  margin: 10px 30px !important;
+  padding-left: 15px;
+  outline-width: 0;
+  border: 0.666667px solid #ececec;
+  border-radius: 5px;
+}
+
+.order-form textarea {
+  height: 120px;
+}
+.clientBg {
+  background-color: #f4f7fc;
+  min-height: 90vh;
+}

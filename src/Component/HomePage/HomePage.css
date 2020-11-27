@@ -1,0 +1,13 @@
+.topBg {
+  clip-path: polygon(0 0, 100% 0, 100% 81%, 0% 100%);
+  background-color: #fbd062;
+  height: 600px;
+}
+.workBg {
+  background-color: #111430;
+  height: 600px;
+}
+.footerBg {
+  background-color: #fbd062;
+  height: auto;
+}

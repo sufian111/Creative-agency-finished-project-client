@@ -1,0 +1,9 @@
+.logo {
+  border: none;
+}
+.activeUrl {
+  color: green;
+}
+.sidebar-link:hover {
+  text-decoration: none;
+}

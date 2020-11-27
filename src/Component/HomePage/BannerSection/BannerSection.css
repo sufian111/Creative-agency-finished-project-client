@@ -1,0 +1,14 @@
+.brand-dark-btn {
+  padding: 10px 61px;
+  background-color: #111430;
+  color: white;
+  font-weight: 400;
+  font-feature-settings: normal;
+  font-variant: normal;
+  border: none;
+  border-radius: 7px;
+}
+.brand-dark-btn:focus,
+.brand-dark-btn:focus {
+  outline: none !important;
+}
