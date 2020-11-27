@@ -2,7 +2,7 @@
 
 ## Creative Agency -A Service Selling Website(Full-Stack)
 
-### [LIVE SITE](https://creative-agency-ltd.netlify.app//)
+### [LIVE SITE](https://creative-agency-ltd.netlify.app/)
 
 ## Features:
 
