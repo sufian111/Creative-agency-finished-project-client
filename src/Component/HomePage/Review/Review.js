@@ -7,7 +7,9 @@ const Review = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`https://dhrubo-s-creative-agency.herokuapp.com/allReview`)
+    fetch(
+      `https://sufian111.github.io/Demo_Server_Repo/creative-agency-review.json`
+    )
       .then((res) => res.json())
       .then((data) => {
         setReviews(data.slice(0, 6)); // 6 reviews are display in hompage

@@ -4,7 +4,9 @@ import "./ProvidedService.css";
 const ProvidedService = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch(`https://dhrubo-s-creative-agency.herokuapp.com/getService`)
+    fetch(
+      `https://sufian111.github.io/Demo_Server_Repo/creative-Service-category.json`
+    )
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
