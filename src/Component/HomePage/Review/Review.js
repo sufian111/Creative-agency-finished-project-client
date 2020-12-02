@@ -7,7 +7,7 @@ const Review = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/review`)
+    fetch(`https://glacial-tor-13010.herokuapp.com/review`)
       .then((res) => res.json())
       .then((data) => {
         setReviews(data.slice(0, 6)); // 6 reviews are display in hompage

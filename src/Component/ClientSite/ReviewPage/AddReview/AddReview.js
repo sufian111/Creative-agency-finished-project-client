@@ -21,7 +21,7 @@ const AddReview = () => {
   };
 
   const handleSubmit = () => {
-    fetch("http://localhost:3001/addReview", {
+    fetch("https://glacial-tor-13010.herokuapp.com/addReview", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(review),

@@ -20,7 +20,7 @@ const OrderPage = () => {
     );
   };
   const handleSubmit = () => {
-    fetch("http://localhost:3001/addOrder", {
+    fetch("https://glacial-tor-13010.herokuapp.com/addOrder", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(loggedInUser),

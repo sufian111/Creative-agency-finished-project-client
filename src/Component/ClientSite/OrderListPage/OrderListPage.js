@@ -12,7 +12,7 @@ const OrderListPage = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/userOrderList`, {
+    fetch(`https://glacial-tor-13010.herokuapp.com/userOrderList`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: loggedInUser.email }),

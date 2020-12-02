@@ -13,7 +13,7 @@ const AddService = () => {
   };
 
   const handleSubmit = () => {
-    fetch("http://localhost:3001/addService", {
+    fetch("https://glacial-tor-13010.herokuapp.com/addService", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(service),

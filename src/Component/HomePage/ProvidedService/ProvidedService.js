@@ -4,7 +4,7 @@ import "./ProvidedService.css";
 const ProvidedService = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3001/services`)
+    fetch(`https://glacial-tor-13010.herokuapp.com/services`)
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
