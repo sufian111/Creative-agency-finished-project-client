@@ -9,7 +9,6 @@ const ClientNavBar = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   const location = useLocation();
-  console.log(location.pathname);
 
   const handleLogOUt = () => {
     window.location.reload("Refresh");

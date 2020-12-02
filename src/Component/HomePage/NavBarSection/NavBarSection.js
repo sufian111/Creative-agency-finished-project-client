@@ -34,7 +34,7 @@ const NavBarSection = () => {
               <NavLink
                 style={{ color: "green" }}
                 className="modifyLink m-2 m-md-3"
-                to="/order"
+                to="/orderList"
               >
                 <strong>My Profile</strong>
               </NavLink>

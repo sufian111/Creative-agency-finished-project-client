@@ -8,7 +8,12 @@ import OrderPage from "./Component/ClientSite/OrderPage/OrderPage";
 import ReviewPage from "./Component/ClientSite/ReviewPage/ReviewPage";
 import OrderListPage from "./Component/ClientSite/OrderListPage/OrderListPage";
 import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
+import Admin from "./Component/AdminSite/AdminPage/Admin";
+import MakeAdmin from "./Component/AdminSite/MakeAdmin/MakeAdmin";
+import AddService from "./Component/AdminSite/AddService/AddService";
+
 export const UserContext = createContext();
+export const ServiceContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
@@ -30,9 +35,20 @@ function App() {
             <Login></Login>
           </Route>
 
-          <PrivateRoute path="/order">
+          <Route path="/order">
             <OrderPage></OrderPage>
-          </PrivateRoute>
+          </Route>
+          <Route path="/admin">
+            <Admin></Admin>
+          </Route>
+
+          <Route path="/makeAdmin">
+            <MakeAdmin></MakeAdmin>
+          </Route>
+
+          <Route path="/addService">
+            <AddService></AddService>
+          </Route>
 
           <Route path="/review">
             <ReviewPage></ReviewPage>

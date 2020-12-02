@@ -11,47 +11,27 @@ const OrderPage = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
   const history = useHistory();
-  const [info, setInfo] = useState({ status: "pending" });
-  const [file, setFile] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("name", info.name);
-    formData.append("email", info.email);
-    formData.append("selectedServiceName", loggedInUser.title);
-    formData.append("description", info.description);
-    formData.append("price", info.price);
-    formData.append("serviceId", loggedInUser.serviceId);
-    formData.append("status", info.status);
+  const [order, setOrder] = useState({});
 
-    fetch("https://aqueous-mountain-26751.herokuapp.com/placeOrder", {
+  const handleChange = () => {
+    alert(
+      "please do not change any thing, go back and select any service from home page"
+    );
+  };
+  const handleSubmit = () => {
+    fetch("http://localhost:3001/addOrder", {
       method: "POST",
-      body: formData,
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(loggedInUser),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then((result) => {
+        console.log(result);
         history.push("/orderList");
-      })
-      .catch((err) => console.log(err));
+      });
   };
 
-  const handleChange = (e) => {
-    let isFieldValid = true;
-    if (isFieldValid) {
-      const newInfo = { ...info };
-
-      if (newInfo.email === undefined) {
-        newInfo["email"] = loggedInUser.email;
-      }
-
-      newInfo[e.target.name] = e.target.value;
-      setInfo(newInfo);
-    }
-  };
-  console.log(info);
   return (
     <div className="">
       <section>
@@ -71,9 +51,10 @@ const OrderPage = () => {
                 <div className="form-group">
                   <input
                     type="text"
-                    name="name"
+                    name="displayName"
                     placeholder="Your name / Company's name"
                     id=""
+                    defaultValue={loggedInUser.displayName}
                     onChange={handleChange}
                     required
                   />
@@ -97,12 +78,22 @@ const OrderPage = () => {
                     defaultValue={loggedInUser.title}
                     required
                   />
+                  <input
+                    type="text"
+                    name="imageUrl"
+                    placeholder="Host your image in imagebb.com and paste the url "
+                    id=""
+                    onChange={handleChange}
+                    defaultValue={loggedInUser.imageUrl}
+                    required
+                  />
 
                   <textarea
                     type="text-area"
                     name="description"
                     placeholder="Enter Description "
                     id=""
+                    defaultValue={loggedInUser.description}
                     onChange={handleChange}
                     required
                     rows="4"
@@ -113,42 +104,23 @@ const OrderPage = () => {
                   <div className="form-row inline ">
                     <div className=" form-group col mr-2">
                       <input
-                        type="number"
+                        type="text"
                         name="price"
-                        className=""
-                        placeholder="Price"
+                        placeholder="service price"
+                        id=""
                         onChange={handleChange}
+                        defaultValue={loggedInUser.price}
                         required
                       />
                     </div>
-                    <div className="col ml-2 ">
-                      <div className="uploadFile">
-                        <input
-                          type="file"
-                          accept="image/*"
-                          className="custom-file-input"
-                          onChange={(e) => setFile(e.target.files[0])}
-                          required
-                        />
-                      </div>
-                    </div>
                   </div>
                 </div>
-
-                <div className="" style={{ width: " 170px" }}>
-                  <input
-                    className="submit-button "
-                    type="submit"
-                    value="Send"
-                    style={{
-                      background: "#111430",
-                      padding: " 0 60px 0 60px",
-                      width: "170px",
-                      color: "white",
-                    }}
-                  />
-                </div>
               </form>
+              <div className="" style={{ width: " 170px" }}>
+                <button onClick={handleSubmit} className="brand-dark-btn">
+                  Submit
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import ClientNavBar from "../ClientNavBar/ClientNavBar";
 import ClientSlider from "../ClientSlider/ClientSlider";
+import AddReview from "./AddReview/AddReview";
 
 const ReviewPage = () => {
   return (
@@ -12,7 +13,7 @@ const ReviewPage = () => {
             <ClientSlider></ClientSlider>
           </div>
           <div className="col-md-9">
-            <p>reviews</p>
+            <AddReview></AddReview>
           </div>
         </div>
       </section>

@@ -4,9 +4,7 @@ import "./ProvidedService.css";
 const ProvidedService = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch(
-      `https://sufian111.github.io/Demo_Server_Repo/creative-Service-category.json`
-    )
+    fetch(`http://localhost:3001/services`)
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
